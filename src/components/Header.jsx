@@ -12,7 +12,7 @@ const Header = ()=>{
             </h1>
             <div className="Header-checkout">
                 <Link to="/checkout">
-                    <i className="fas fa-shopping-basket" title="checkout"/>
+                    <i className="fas fa-shopping-basket fa-2x" title="checkout"/>
                 </Link>
             </div>
         </header>
