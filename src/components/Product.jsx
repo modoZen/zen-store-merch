@@ -2,7 +2,7 @@
 import React from 'react'
 
 // eslint-disable-next-line arrow-body-style
-const Product = ({product}) => {
+const Product = ({product, handlerAddToCart }) => {
     return (
         <div className="Products-item">
             <img src={product.image} alt={product.title} />
@@ -17,7 +17,7 @@ const Product = ({product}) => {
                 </h2>
                 <p>{product.description}</p>
             </div>
-            <button type="button">Comprar</button>
+            <button type="button" onClick={()=>handlerAddToCart(product)}>Comprar</button>
         </div>
     )
 }
