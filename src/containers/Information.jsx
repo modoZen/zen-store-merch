@@ -1,6 +1,7 @@
 /* eslint-disable react/function-component-definition */
 import React from "react";
 import '../styles/components/Information.css';
+import { Link } from "react-router-dom";
 // eslint-disable-next-line arrow-body-style
 const Information = ()=>{
     return (
@@ -24,7 +25,10 @@ const Information = ()=>{
             </div>
             <div className="Information-buttons">
                 <div className="Information-back">Regresar</div>
-                <div className="Information-next">pagar</div>
+                <Link to="/checkout/payment">
+                    <div className="Information-next">pagar</div>
+                </Link>
+                
             </div>
         </div>
         <div className="Information-sidebar">
