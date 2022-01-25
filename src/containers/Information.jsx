@@ -1,13 +1,13 @@
 /* eslint-disable react/function-component-definition */
 import React, { useRef, useContext} from "react";
 import '../styles/components/Information.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AppContext from "../context/AppContext";
 // eslint-disable-next-line arrow-body-style
 const Information = ()=>{
     const { state, addToBuyer } = useContext(AppContext);
     const form = useRef(null);
-
+    const navigate = useNavigate();
     const { cart } = state;
 
     const handlerSubmit = () =>{
@@ -24,6 +24,7 @@ const Information = ()=>{
             'phone': formData.get('phone'),
         }
         addToBuyer(buyer);
+        navigate('/checkout/payment')
     }
 
     return (
