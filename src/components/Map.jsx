@@ -12,8 +12,8 @@ const Map = ({data})=>{
         with:"100%",    
     }
     const defaultCenter={
-        lat:parseFloat(data.lat),
-        lng:parseFloat(data.lng)
+        lat: parseFloat(data.lat),
+        lng: parseFloat(data.lng)
     }
 
     return (
