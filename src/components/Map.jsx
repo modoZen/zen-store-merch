@@ -2,6 +2,7 @@
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import '../styles/components/Success.css';
+import config from "../../config";
 // eslint-disable-next-line arrow-body-style
 const Map = ({data})=>{
 
@@ -11,12 +12,12 @@ const Map = ({data})=>{
         with:"100%",    
     }
     const defaultCenter={
-        lat:data.lat,
-        lng:data.lng
+        lat:parseFloat(data.lat),
+        lng:parseFloat(data.lng)
     }
 
     return (
-        <LoadScript googleMapsApiKey="AIzaSyCnsD9MdAW6VuZY4SCD6ww91KeyP9CXDoo">
+        <LoadScript googleMapsApiKey={config.googleMapsApiKey}>
             <GoogleMap
                 mapContainerStyle={mapStyles}
                 center={defaultCenter}

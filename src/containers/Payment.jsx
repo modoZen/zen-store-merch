@@ -1,9 +1,10 @@
 /* eslint-disable react/function-component-definition */
 import React, { useContext } from "react";
 import { PayPalButton } from 'react-paypal-button-v2';
-import AppContext from '../context/AppContext'
 import { useNavigate } from "react-router-dom";
+import AppContext from '../context/AppContext'
 import '../styles/components/Payment.css';
+import config from "../../config";
 
 // eslint-disable-next-line arrow-body-style
 const Payment = ()=>{
@@ -12,7 +13,7 @@ const Payment = ()=>{
     const navigate = useNavigate();
 
     const paypalOptions = {
-        clientId: 'AfICGoXr9Fy8878UX0tKwwnaN9uxsu9X-RAHamSGC9shcbpaUU5ucl-hLXBd7_kI_17M4NoJ79QKdMm1',
+        clientId: config.clientIdPaypal,
         intent: 'capture',
         currency: 'USD',
     };

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import config from "../../config";
 
 const useGoogleAddress = address => {
     const [map, setMap] = useState({});
-    const API = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCnsD9MdAW6VuZY4SCD6ww91KeyP9CXDoo`;
+    const API = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${config.googleMapsApiKey}`;
 
     useEffect(() => {
         async function handler() {
