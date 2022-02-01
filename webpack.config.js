@@ -65,7 +65,7 @@ module.exports = {
 			safe: true,
 			systemvars: true,
 			defaults: false,
-		})
+		}),
   ],
   devServer: {
     allowedHosts: path.join(__dirname, 'dist'),
