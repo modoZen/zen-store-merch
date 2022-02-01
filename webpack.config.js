@@ -60,7 +60,12 @@ module.exports = {
         { from: 'public/icon.png', to: 'assets' },
       ],
     }),
-    new Dotenv()
+    new Dotenv({
+			path: './.env',
+			safe: true,
+			systemvars: true,
+			defaults: false,
+		})
   ],
   devServer: {
     allowedHosts: path.join(__dirname, 'dist'),
