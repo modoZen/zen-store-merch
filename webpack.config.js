@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
+require('dotenv').config();
+// const Dotenv = require('dotenv-webpack');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -60,11 +62,15 @@ module.exports = {
         { from: 'public/icon.png', to: 'assets' },
       ],
     }),
-    new Dotenv({
-			path: './.env',
-			safe: true,
-			systemvars: true,
-			defaults: false,
+    // new Dotenv({
+		// 	path: './.env',
+		// 	safe: true,
+		// 	systemvars: true,
+		// 	defaults: false,
+		// }),
+    new webpack.DefinePlugin({
+      'process.env.PAYPAL_CLIENT_PP': JSON.stringify(process.env.PAYPAL_CLIENT_PP),
+      'process.env.GOOGLE_MAPS_API_KEY': JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
 		}),
   ],
   devServer: {
