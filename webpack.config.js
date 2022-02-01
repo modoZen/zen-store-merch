@@ -62,12 +62,6 @@ module.exports = {
         { from: 'public/icon.png', to: 'assets' },
       ],
     }),
-    // new Dotenv({
-		// 	path: './.env',
-		// 	safe: true,
-		// 	systemvars: true,
-		// 	defaults: false,
-		// }),
     new webpack.DefinePlugin({
       'process.env.PAYPAL_CLIENT_PP': JSON.stringify(process.env.PAYPAL_CLIENT_PP),
       'process.env.GOOGLE_MAPS_API_KEY': JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
